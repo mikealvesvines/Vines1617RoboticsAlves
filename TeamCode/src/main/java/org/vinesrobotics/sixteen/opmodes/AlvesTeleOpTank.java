@@ -94,9 +94,7 @@ public class AlvesTeleOpTank extends OpMode{
         }
 
         robot.leftMotor1.setPower(left);
-        robot.leftMotor2.setPower(left);
         robot.rightMotor1.setPower(right);
-        robot.rightMotor2.setPower(right);
         telemetry.addData("Right Stick:", right);
         telemetry.addData("Left Stick:", left);
 

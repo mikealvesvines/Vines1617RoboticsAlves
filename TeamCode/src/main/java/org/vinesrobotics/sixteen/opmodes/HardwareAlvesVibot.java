@@ -48,9 +48,7 @@ public class HardwareAlvesVibot
 {
     /* Public OpMode members. */
     public DcMotor  leftMotor1   = null;
-    public DcMotor  leftMotor2   = null;
     public DcMotor  rightMotor1  = null;
-    public DcMotor  rightMotor2  = null;
     public DcMotor  intake_motor = null;
     public DcMotor  launch_motor = null;
 
@@ -73,32 +71,24 @@ public class HardwareAlvesVibot
         hwMap = ahwMap;
 
         // Define and Initialize Motors
-        leftMotor1   = hwMap.dcMotor.get("left_drive1");
-        leftMotor2   = hwMap.dcMotor.get("left_drive2");
+        leftMotor1   = hwMap.dcMotor.get("left_drive1");;
         rightMotor1  = hwMap.dcMotor.get("right_drive1");
-        rightMotor2  = hwMap.dcMotor.get("right_drive2");
         intake_motor = hwMap.dcMotor.get("intake_motor");
         launch_motor = hwMap.dcMotor.get("launch_motor");
         leftMotor1.setDirection(DcMotor.Direction.REVERSE); // Set to REVERSE if using AndyMark motors
-        leftMotor2.setDirection(DcMotor.Direction.REVERSE);
         rightMotor1.setDirection(DcMotor.Direction.FORWARD);
-        rightMotor1.setDirection(DcMotor.Direction.FORWARD);// Set to FORWARD if using AndyMark motors
 
 
         // Set all motors to zero power
         leftMotor1.setPower(0);
-        leftMotor2.setPower(0);
         rightMotor1.setPower(0);
-        rightMotor2.setPower(0);
         intake_motor.setPower(0);
         launch_motor.setPower(0);
 
         // Set all motors to run without encoders.
         // May want to use RUN_USING_ENCODERS if encoders are installed.
         leftMotor1.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        leftMotor2.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         rightMotor1.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        rightMotor2.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         intake_motor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         launch_motor.setMode(DcMotor.RunMode.RUN_USING_ENCODERS);
 
